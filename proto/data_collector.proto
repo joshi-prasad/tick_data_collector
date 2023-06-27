@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package data_collector;
+
+option go_package = "proto.tick_data_collector";
+
+service DataCollectionService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+  rpc Tick(TickData) returns (TickResponse);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+
+message TickData {
+  string instrument = 1;
+  int32 strike_price = 2;
+  bool   is_call_option = 3;
+
+  string ignore = 100;
+  string token = 101;
+  float best_buy_price = 102;
+  int64 best_buy_quantity = 103;
+  float best_sell_price = 104;
+  int64 best_sell_quantity = 105;
+  float ltp = 106;
+  float price_high = 107;
+  float price_low = 108;
+  float price_avg_trade = 109;
+  float price_close = 110;
+  float price_open = 111;
+  float price_net_change_percent = 112;
+  int64 sell_quantity = 113;
+  int64 buy_quantity = 114;
+  int64 trade_quantity = 115;
+  int64 open_interest = 116;
+  float total_trade_value = 117;
+  int64 last_trade_quantity = 118;
+  string last_trade_time = 119;
+  float net_change = 120;
+}
+
+message TickResponse {
+
+}

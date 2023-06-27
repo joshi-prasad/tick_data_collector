@@ -1,2 +1,2 @@
 # tick_data_collector
-Tick Data Collector
+grpc for collecting data for every tick
